@@ -71,7 +71,7 @@ testplus_DEPENDENCIES = $(LDADDS)
 am_udptest_OBJECTS = test.$(OBJEXT) udp.$(OBJEXT) server.$(OBJEXT)
 udptest_OBJECTS = $(am_udptest_OBJECTS)
 udptest_DEPENDENCIES = $(LDADDS)
-DEFAULT_INCLUDES =
+DEFAULT_INCLUDES = 
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__depfiles_maybe = depfiles
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -150,7 +150,7 @@ LD_UTIL_VERSION_SCRIPT = @LD_UTIL_VERSION_SCRIPT@
 LD_VERSION_SCRIPT = @LD_VERSION_SCRIPT@
 LIBM = @LIBM@
 LIBOBJS = @LIBOBJS@
-LIBS =
+LIBS = 
 LIBTOOL = @LIBTOOL@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
@@ -295,19 +295,19 @@ clean-noinstPROGRAMS:
 	  echo " rm -f $$p $$f"; \
 	  rm -f $$p $$f ; \
 	done
-atomsmasher$(EXEEXT): $(atomsmasher_OBJECTS) $(atomsmasher_DEPENDENCIES)
+atomsmasher$(EXEEXT): $(atomsmasher_OBJECTS) $(atomsmasher_DEPENDENCIES) 
 	@rm -f atomsmasher$(EXEEXT)
 	$(LINK) $(atomsmasher_OBJECTS) $(atomsmasher_LDADD) $(LIBS)
-startservers$(EXEEXT): $(startservers_OBJECTS) $(startservers_DEPENDENCIES)
+startservers$(EXEEXT): $(startservers_OBJECTS) $(startservers_DEPENDENCIES) 
 	@rm -f startservers$(EXEEXT)
 	$(LINK) $(startservers_OBJECTS) $(startservers_LDADD) $(LIBS)
-testapp$(EXEEXT): $(testapp_OBJECTS) $(testapp_DEPENDENCIES)
+testapp$(EXEEXT): $(testapp_OBJECTS) $(testapp_DEPENDENCIES) 
 	@rm -f testapp$(EXEEXT)
 	$(LINK) $(testapp_OBJECTS) $(testapp_LDADD) $(LIBS)
-testplus$(EXEEXT): $(testplus_OBJECTS) $(testplus_DEPENDENCIES)
+testplus$(EXEEXT): $(testplus_OBJECTS) $(testplus_DEPENDENCIES) 
 	@rm -f testplus$(EXEEXT)
 	$(CXXLINK) $(testplus_OBJECTS) $(testplus_LDADD) $(LIBS)
-udptest$(EXEEXT): $(udptest_OBJECTS) $(udptest_DEPENDENCIES)
+udptest$(EXEEXT): $(udptest_OBJECTS) $(udptest_DEPENDENCIES) 
 	@rm -f udptest$(EXEEXT)
 	$(LINK) $(udptest_OBJECTS) $(udptest_LDADD) $(LIBS)
 

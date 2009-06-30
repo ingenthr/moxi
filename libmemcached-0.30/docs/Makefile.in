@@ -518,16 +518,16 @@ uninstall-man: uninstall-man1 uninstall-man3
 	uninstall-man3
 
 
-libmemcached.3: libmemcached.pod
+libmemcached.3: libmemcached.pod 
 	@POD2MAN@ -c "libmemcached" -r "" -s 3 ${top_srcdir}/docs/libmemcached.pod > libmemcached.3
 
-libmemcachedutil.3: libmemcachedutil.pod
+libmemcachedutil.3: libmemcachedutil.pod 
 	@POD2MAN@ -c "libmemcachedutil" -r "" -s 3 ${top_srcdir}/docs/libmemcachedutil.pod > libmemcachedutil.3
 
 libmemcached_examples.3: libmemcached_examples.pod
 	@POD2MAN@ -c "libmemcached" -r "" -s 3 ${top_srcdir}/docs/libmemcached_examples.pod > libmemcached_examples.3
 
-memcached_create.3: memcached_create.pod
+memcached_create.3: memcached_create.pod 
 	@POD2MAN@ -c "libmemcached" -r "" -s 3 ${top_srcdir}/docs/memcached_create.pod > memcached_create.3
 
 memcached_free.3: memcached_create.pod
@@ -719,16 +719,16 @@ memcached_analyze.3: memcached_analyze.pod
 memcached_generate_hash_value.3: memcached_generate_hash_value.pod
 	@POD2MAN@ -c "libmemcached" -r "" -s 3 ${top_srcdir}/docs/memcached_generate_hash_value.pod > memcached_generate_hash_value.3
 
-memcached_pool_create.3: memcached_pool.pod
+memcached_pool_create.3: memcached_pool.pod 
 	@POD2MAN@ -c "libmemcachedutil" -r "" -s 3 ${top_srcdir}/docs/memcached_pool.pod > memcached_pool_create.3
 
-memcached_pool_destroy.3: memcached_pool.pod
+memcached_pool_destroy.3: memcached_pool.pod 
 	@POD2MAN@ -c "libmemcachedutil" -r "" -s 3 ${top_srcdir}/docs/memcached_pool.pod > memcached_pool_destroy.3
 
-memcached_pool_pop.3: memcached_pool.pod
+memcached_pool_pop.3: memcached_pool.pod 
 	@POD2MAN@ -c "libmemcachedutil" -r "" -s 3 ${top_srcdir}/docs/memcached_pool.pod > memcached_pool_pop.3
 
-memcached_pool_push.3: memcached_pool.pod
+memcached_pool_push.3: memcached_pool.pod 
 	@POD2MAN@ -c "libmemcachedutil" -r "" -s 3 ${top_srcdir}/docs/memcached_pool.pod > memcached_pool_push.3
 
 memcp.1: memcp.pod
@@ -755,7 +755,7 @@ memdump.1: memdump.pod
 memflush.1: memflush.pod
 	@POD2MAN@ -c "libmemcached" -r "" -s 1 ${top_srcdir}/docs/memflush.pod > memflush.1
 
-test:
+test: 
 	podchecker $(top_srcdir)/docs/libmemcached.pod
 	podchecker $(top_srcdir)/docs/memcached_flush.pod
 	podchecker $(top_srcdir)/docs/memcached_stats.pod

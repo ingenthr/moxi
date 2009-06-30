@@ -105,7 +105,7 @@ memstat_DEPENDENCIES = $(LDADDS)
 memstat_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(memstat_LDFLAGS) \
 	$(LDFLAGS) -o $@
-DEFAULT_INCLUDES =
+DEFAULT_INCLUDES = 
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__depfiles_maybe = depfiles
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -262,7 +262,7 @@ LDADDS = $(top_builddir)/libmemcached/libmemcached.la
 noinst_HEADERS = client_options.h \
 		utilities.h \
 		generator.h \
-		execute.h
+		execute.h 
 
 memcat_SOURCES = memcat.c utilities.c
 memcat_LDADD = $(LDADDS)
@@ -349,28 +349,28 @@ clean-binPROGRAMS:
 	  echo " rm -f $$p $$f"; \
 	  rm -f $$p $$f ; \
 	done
-memcat$(EXEEXT): $(memcat_OBJECTS) $(memcat_DEPENDENCIES)
+memcat$(EXEEXT): $(memcat_OBJECTS) $(memcat_DEPENDENCIES) 
 	@rm -f memcat$(EXEEXT)
 	$(memcat_LINK) $(memcat_OBJECTS) $(memcat_LDADD) $(LIBS)
-memcp$(EXEEXT): $(memcp_OBJECTS) $(memcp_DEPENDENCIES)
+memcp$(EXEEXT): $(memcp_OBJECTS) $(memcp_DEPENDENCIES) 
 	@rm -f memcp$(EXEEXT)
 	$(memcp_LINK) $(memcp_OBJECTS) $(memcp_LDADD) $(LIBS)
-memdump$(EXEEXT): $(memdump_OBJECTS) $(memdump_DEPENDENCIES)
+memdump$(EXEEXT): $(memdump_OBJECTS) $(memdump_DEPENDENCIES) 
 	@rm -f memdump$(EXEEXT)
 	$(memdump_LINK) $(memdump_OBJECTS) $(memdump_LDADD) $(LIBS)
-memerror$(EXEEXT): $(memerror_OBJECTS) $(memerror_DEPENDENCIES)
+memerror$(EXEEXT): $(memerror_OBJECTS) $(memerror_DEPENDENCIES) 
 	@rm -f memerror$(EXEEXT)
 	$(memerror_LINK) $(memerror_OBJECTS) $(memerror_LDADD) $(LIBS)
-memflush$(EXEEXT): $(memflush_OBJECTS) $(memflush_DEPENDENCIES)
+memflush$(EXEEXT): $(memflush_OBJECTS) $(memflush_DEPENDENCIES) 
 	@rm -f memflush$(EXEEXT)
 	$(memflush_LINK) $(memflush_OBJECTS) $(memflush_LDADD) $(LIBS)
-memrm$(EXEEXT): $(memrm_OBJECTS) $(memrm_DEPENDENCIES)
+memrm$(EXEEXT): $(memrm_OBJECTS) $(memrm_DEPENDENCIES) 
 	@rm -f memrm$(EXEEXT)
 	$(memrm_LINK) $(memrm_OBJECTS) $(memrm_LDADD) $(LIBS)
-memslap$(EXEEXT): $(memslap_OBJECTS) $(memslap_DEPENDENCIES)
+memslap$(EXEEXT): $(memslap_OBJECTS) $(memslap_DEPENDENCIES) 
 	@rm -f memslap$(EXEEXT)
 	$(memslap_LINK) $(memslap_OBJECTS) $(memslap_LDADD) $(LIBS)
-memstat$(EXEEXT): $(memstat_OBJECTS) $(memstat_DEPENDENCIES)
+memstat$(EXEEXT): $(memstat_OBJECTS) $(memstat_DEPENDENCIES) 
 	@rm -f memstat$(EXEEXT)
 	$(memstat_LINK) $(memstat_OBJECTS) $(memstat_LDADD) $(LIBS)
 
