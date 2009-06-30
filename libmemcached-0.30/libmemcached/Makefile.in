@@ -93,7 +93,7 @@ libmemcached_la_OBJECTS = $(am_libmemcached_la_OBJECTS)
 libmemcached_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(libmemcached_la_LDFLAGS) $(LDFLAGS) -o $@
-DEFAULT_INCLUDES = 
+DEFAULT_INCLUDES =
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__depfiles_maybe = depfiles
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -250,7 +250,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 EXTRA_DIST = libmemcached_probes.d memcached/README.txt libmemcached.ver
 BUILT_SOURCES = @DTRACE_HEADER@
-EXTRA_HEADERS = 
+EXTRA_HEADERS =
 noinst_HEADERS = libmemcached_probes.h \
                  libmemcached_config.h \
 		 memcached_io.h \
@@ -320,7 +320,7 @@ libmemcached_config.h: stamp-h1
 stamp-h1: $(srcdir)/libmemcached_config.h.in $(top_builddir)/config.status
 	@rm -f stamp-h1
 	cd $(top_builddir) && $(SHELL) ./config.status libmemcached/libmemcached_config.h
-$(srcdir)/libmemcached_config.h.in:  $(am__configure_deps) 
+$(srcdir)/libmemcached_config.h.in:  $(am__configure_deps)
 	cd $(top_srcdir) && $(AUTOHEADER)
 	rm -f stamp-h1
 	touch $@
@@ -354,7 +354,7 @@ clean-libLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libmemcached.la: $(libmemcached_la_OBJECTS) $(libmemcached_la_DEPENDENCIES) 
+libmemcached.la: $(libmemcached_la_OBJECTS) $(libmemcached_la_DEPENDENCIES)
 	$(libmemcached_la_LINK) -rpath $(libdir) $(libmemcached_la_OBJECTS) $(libmemcached_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
@@ -634,7 +634,7 @@ dtrace_probes.h: libmemcached_probes.d
 	rm dtrace_probes.tmp
 
 # So libtool doesn't support dtrace, but just copy one of the existing
-# lo-file and replace the file name ;-) 
+# lo-file and replace the file name ;-)
 libmemcached_probes.lo: libmemcached_probes.o
 	sed "s,jenkins_hash,libmemcached_probes,g" jenkins_hash.lo > libmemcached_probes.lo
 
