@@ -7,7 +7,7 @@ sh version.sh
 # check for sane defaults on some platforms
 UNAME=`uname -s`
 if [ -d /opt/local/share/aclocal ] && [ $UNAME = "Darwin" ] ; then
-ACLOCALFLAGS=" -I /opt/local/share/aclocal"
+ACLOCALFLAGS="$ACLOCALFLAGS -I /opt/local/share/aclocal"
 fi
 
 echo "libtoolize..."

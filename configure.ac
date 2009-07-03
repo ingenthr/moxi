@@ -103,6 +103,17 @@ AC_SUBST(DTRACE)
 AC_SUBST(DTRACEFLAGS)
 AC_SUBST(PROFILER_LDFLAGS)
 
+sinclude(libmemcached-0.30/m4/pod2man.m4)
+sinclude(libmemcached-0.30/m4/debug.m4)
+sinclude(libmemcached-0.30/m4/dtrace.m4)
+sinclude(libmemcached-0.30/m4/byteorder.m4)
+sinclude(libmemcached-0.30/m4/64bit.m4)
+sinclude(libmemcached-0.30/m4/protocol_binary.m4)
+sinclude(libmemcached-0.30/m4/memcached.m4)
+sinclude(libmemcached-0.30/m4/setsockopt.m4)
+sinclude(libmemcached-0.30/m4/hsieh.m4)
+sinclude(libmemcached-0.30/m4/util.m4)
+
 AC_ARG_ENABLE(coverage,
   [AS_HELP_STRING([--disable-coverage],[Disable code coverage])])
 
@@ -422,6 +433,6 @@ AC_SEARCH_LIBS(memcached_create, memcached)
 
 LIBS="$LIBS -lm -lsqlite3 -lresolv -lssl"
 
-AC_CONFIG_FILES(Makefile doc/Makefile)
+AC_CONFIG_FILES(Makefile doc/Makefile libmemcached-0.30/libmemcached/Makefile)
 AC_OUTPUT
 
