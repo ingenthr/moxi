@@ -4111,7 +4111,9 @@ int main (int argc, char **argv) {
     char *pid_file = NULL;
     char *cproxy_cfg = NULL;
     char *cproxy_behavior = NULL;
+#ifndef MAIN_CHECK
     struct passwd *pw;
+#endif
     struct rlimit rlim;
     /* listening sockets */
     static int *l_socket = NULL;
@@ -4338,6 +4340,7 @@ int main (int argc, char **argv) {
     }
 
     /* lose root privileges if we have them */
+#ifndef MAIN_CHECK
     if (getuid() == 0 || geteuid() == 0) {
         if (username == 0 || *username == '\0') {
             fprintf(stderr, "can't run as root without the -u switch\n");
@@ -4352,6 +4355,7 @@ int main (int argc, char **argv) {
             exit(EX_OSERR);
         }
     }
+#endif
 
     /* daemonize if requested */
     /* if we want to ensure our ability to dump core, don't chdir to / */
