@@ -59,4 +59,4 @@ libmemcached-*/libmemcached/*.lo
 libmemcached-*/libmemcached/*.la
 libmemcached-*/libmemcached/libmemcached_config.h
 .buildbot/*
-/memcached.spec
+/t/check_moxi_agent.cfg
