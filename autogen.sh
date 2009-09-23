@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/ksh
 #
+
+set -xe
 
 # Get the initial version.
 sh version.sh
@@ -37,6 +39,17 @@ if [ -d libconflate ] && [ -d .git ] && ! [ -f libconflate/autogen.sh ]; then
   echo "libconflate submodule seem to be absent. Will fetch it now."
   git submodule update -i && (cd libconflate && git submodule update -i) && (cd libconflate/libstrophe && git submodule update -i)
 fi
+
+# if this project is based on git, not just make-dist tarball, 
+# clean submodules recursively on autogen
+for i in $(find . -name .git \
+           | awk 'BEGIN{getline} \
+           {print (substr($0, 0, index($0, ".git")-1 ))}');
+do
+  currdir=$(pwd)
+  cd $i && git reset --hard && git clean -d -f -x 
+  cd $currdir
+done
 
 if (test -f libconflate/autogen.sh) && ! (test -f libconflate/configure); then
     echo "libconflate..."
